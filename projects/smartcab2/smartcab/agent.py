@@ -95,7 +95,7 @@ class LearningAgent(Agent):
         # When learning, check if the 'state' is not in the Q-table
         # If it is not, create a new dictionary for that state
         #   Then, for each action available, set the initial Q-value to 0.0
-        if (self.learning) and (state not in self.Q):
+        if state not in self.Q:
             self.Q[state]= {'forward': 0, 'right': 0, 'left': 0, None: 0}
 
         return
@@ -120,9 +120,7 @@ class LearningAgent(Agent):
         if (not self.learning) or (random.random() <= self.epsilon):
             action = self.valid_actions[random.randint(0,len(self.valid_actions)-1)]
         else:
-            maxQ = max(self.Q[state].values())
-            actions = [key for key,val in self.Q[state].iteritems() if val == maxQ]
-            action = actions[random.randint(0,len(actions)-1)]
+            action = max(self.Q[state], key=self.Q[state].get)
  
         return action
 
@@ -137,9 +135,11 @@ class LearningAgent(Agent):
         ###########
         # When learning, implement the value iteration update rule
         #   Use only the learning rate 'alpha' (do not use the discount factor 'gamma')
-
-        if self.learning:
-            self.Q[state][action] = self.Q[state][action] +  (self.alpha * (reward - self.Q[state][action]))
+		#don't use future rewards?
+        newState = self.build_state()
+        #maxNextState = self.get_maxQ(newState)
+        #self.Q[state][action] = self.Q[state][action] +  (self.alpha * (reward + maxNextState - self.Q[state][action]))
+        self.Q[state][action] = self.Q[state][action] +  (self.alpha * (reward - self.Q[state][action]))
 
         return
 

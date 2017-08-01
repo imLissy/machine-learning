@@ -1,0 +1,80 @@
+decion trees, easy to use, good visualization
+prone to overfitting if many features
+good for combo classifiers
+
+
+SVMs
+margin useful concept how a linear classifier may generalize
+find linear separater to maximize margin
+only as lazy as necessary to represent what you have to
+linear not enough - kernel trick
+k(x,y) < domain knowledge
+work well in comlicated domains, clear magin of separation
+bad in large data sets, take long time
+bad lots of features, noise, prone to overfitting
+when classes overlap -naive bays better
+
+instance based learning -KNN
+remembers
+fast
+simple
+no generalization
+prone to overfitting
+faster for learning, but logn query time; lnear regression: learning n time, but query O(1)
+
+
+bayes
+fast, easy
+inference is cheap, few params, estimate params with labeled data, connects inference and claassification, emperically successful
+assumes attributes are conditionally independent, doesn't model interrealtionships between attributes - ok that probabilities are wrong as long as you can still classify one way or another
+one attribute never seen before, prob of entire product will also be 0, one unseen attribute spoils the whole bunch - initialize counts so nothing is 0
+so inductive boas, go in with assumtion, all things are mildly possible
+
+P(a certain word|surrounding words) = P(surrounding words|a certain word)*P(a certain word) / P(surrounding words)
+
+1/22 / 1/22 = 1
+data_list = sampletext.strip().split()
+    wordList = {}
+    for index, sample_word in enumerate(data_list):
+        if len(data_list)-1 > index:
+            if word == sample_word:
+                nextWord = data_list[index+1]
+                if nextWord in wordList:
+                    wordList[nextWord] +=1
+                else:
+                    wordList[nextWord] = 0
+
+
+ensemble learning, gets rid of overfitting, same idea as cross validation
+random subset combine by mean - bagginginstead of picking subsets at random, pick the hardest examples and weighted mean
+error - probability given underlying distribution that we disagree (the amount of time you'll ake a mistake, add probability instead number of mismatches)
+weak learner - will do better than chance, error rate less than 1/2 minus epsilon (small num) always get some info from learner, pus more weight on ones getting wrong.
+does well, because if it doesn't do well, focuses on the things it doesn't get right and tries to get them right
+number of things has to get wrong because you at least get haf right
+
+
+n_at_most_50k, n_greater_50k = data.income.value_counts()
+
+income = (income_raw == ">50K").astype(np.uint8)
+
+for plots
+import seaborn as sns
+sns.set(style="whitegrid", color_codes=True)
+sns.factorplot("sex", col="marital-status", data=data, 
+               hue='income', kind="count", col_wrap=4);
+
+In general, with model selection it's often a good idea to try out simpler methods like Logistic Regression or Naive Bayes as a benchmark, and then move on to non-linear classifiers such as your choice of SVM and ensemble methods.
+
+
+
+perform pca before feature selection
+pca computationally expensive
+
+
+import seaborn as sns
+sns.heatmap(data.rank(pct=True).iloc[indices], annot=True)
+
+import matplotlib.pyplot as plt
+plt.figure(figsize=(12,8))
+plt.title('Correlation Heatmap')
+sns.heatmap(data.corr(),annot=True)

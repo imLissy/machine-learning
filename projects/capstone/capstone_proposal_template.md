@@ -1,7 +1,7 @@
 # Machine Learning Engineer Nanodegree
 ## Capstone Proposal
-Joe Udacity  
-December 31st, 2050
+Elissa Backas 
+May 31, 2017
 
 ## Proposal
 _(approx. 2-3 pages)_
@@ -9,6 +9,7 @@ _(approx. 2-3 pages)_
 ### Domain Background
 _(approx. 1-2 paragraphs)_
 
+Disney World is becoming an increasingly popular escape from reality. Every year, the parks become more crowded and Disney has started investing in new ways to manage crowds. Three years ago they introduced Magic Bands, and with it, a new way for visitors to reserve a spot in line for their favorite rides. With their new app and the Magic Bands every visitor now wears at the parks, Disney is able to collect a wealth of information. With this data, they can reduce waits providing a better expierence to their customers and make more money as those customers are now off shopping and eating rahter than waiting all day in line.
 In this section, provide brief details on the background information of the domain from which the project is proposed. Historical information relevant to the project should be included. It should be clear how or why a problem in the domain can or should be solved. Related academic research should be appropriately cited in this section, including why that research is relevant. Additionally, a discussion of your personal motivation for investigating a particular problem in the domain is encouraged but not required.
 
 ### Problem Statement
