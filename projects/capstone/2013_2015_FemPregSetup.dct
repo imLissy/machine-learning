@@ -12,7 +12,7 @@ _lines(1)
 
 _line(1)
 
-    _column(1)       long                             CASEID   %5f  "Case identification number"
+    _column(1)       double                             CASEID   %5f  "Case identification number"
     _column(6)       byte                           PREGORDR   %2f  "Pregnancy order (number)"
     _column(8)       byte                          HOWPREG_N   %2f  "BB-2 # of Weeks or Months Currently Pregnant"
    _column(10)       byte                          HOWPREG_P   %1f  "BB-2 Current pregnancy length reported in months or weeks"
